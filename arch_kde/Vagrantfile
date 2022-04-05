@@ -1,0 +1,14 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "archlinux/archlinux"
+  config.vm.provider :libvirt do |libvirt|
+      libvirt.graphics_type = 'spice'
+      libvirt.memory = 8196
+      libvirt.cpus=  6
+  end
+#  config.vm.synced_folder "./", "/vagrant"
+
+  config.vm.provision :shell, path: "bootstrap.sh"
+end
