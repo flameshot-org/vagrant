@@ -2,9 +2,9 @@
 
 # Configure Base VM
 pacman -Syu --noconfirm
-pacman -S --noconfirm plasma-wayland-session plasma sddm spice-vdagent xdg-desktop-portal xdg-desktop-portal-kde
-systemctl enable sddm.service
-systemctl start  sddm.service
+pacman -S --noconfirm gnome gdm spice-vdagent gnome-shell-extension-appindicator xdg-desktop-portal xdg-desktop-portal-gnome
+systemctl enable gdm.service
+systemctl start  gdm.service
 
 # Add flameshot build dependencies
 pacman -S --noconfirm cmake base-devel qt5-base qt5-tools ninja git
